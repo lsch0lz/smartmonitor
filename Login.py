@@ -1,7 +1,9 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 
 from src.utils.login import check_login
+from src.utils.register import create_user
+
+AUTHENTICATED = False
 
 st.set_page_config(
     page_title="Login",
@@ -16,10 +18,13 @@ password = st.text_input('Password',  '')
 
 if st.button('Login'):
         if check_login(username, password):
-            st.write("Sucessfully Loged in!")
+            st.write('Welcome to Smart-Monitor!')
+            AUTHENTICATED = True
         else:
-            st.write("Wrong PW")
+            st.write("Wrong Credetentials! Try Again!")
         
-st.write('No Account yet? Create one!')
+st.write('No Account yet? Create one! Just fill out the fields with your new Username and Password.')
 if st.button('Register'):
-        pass
+        if create_user(username, password):
+            st.write('Welcome to Smart-Monitor!')
+            AUTHENTICATED = True
