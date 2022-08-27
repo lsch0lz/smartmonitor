@@ -57,4 +57,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dbdashboard:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smartmonitor:latest
