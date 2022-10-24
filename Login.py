@@ -18,15 +18,15 @@ username = st.text_input('Username', '')
 password = st.text_input('Password',  '')
 
 if st.button('Login'):
-        if check_login(username, password):
-            st.write('Welcome to Smart-Monitor!')
-            st.session_state['user_authentication'] = True
-        else:
-            st.write("Wrong Credetentials! Try Again!")
-            st.session_state['user_authentication'] = False
-        
+    if check_login(username, password):
+        st.write('Welcome to Smart-Monitor!')
+        st.session_state['user_authentication'] = True
+    else:
+        st.write("Wrong Credetentials! Try Again!")
+        st.session_state['user_authentication'] = False
+
 st.write('No Account yet? Create one! Just fill out the fields with your new Username and Password.')
 if st.button('Register'):
-        if create_user(username, password):
-            st.write('Welcome to Smart-Monitor!')
-            st.session_state['user_authentication'] = True
+    if create_user(username, password):
+        st.write('Welcome to Smart-Monitor!')
+        st.session_state['user_authentication'] = True

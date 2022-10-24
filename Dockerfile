@@ -1,9 +1,11 @@
 FROM python:3.8
-RUN mkdir -p data
-RUN mkdir /usr/src/app/
-COPY . /usr/src/app/
-WORKDIR /usr/src/app/
+WORKDIR /
+
+COPY pages /pages
+COPY src /src
+COPY Login.py Login.py
+COPY requirements.txt requirements.txt
+
 EXPOSE 8080
+
 RUN pip install -r requirements.txt
-ENTRYPOINT ["streamlit", "run"]
-CMD ["Login.py"]

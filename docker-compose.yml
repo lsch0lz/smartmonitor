@@ -1,9 +1,0 @@
-version: '3.8'
-services:
-    smartmonitor:
-        platform: linux/amd64
-        build: ./
-        volumes:
-            - ./:/usr/src/app/
-        ports:
-            - 8501:8501
